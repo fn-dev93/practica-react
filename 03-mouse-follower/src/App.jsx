@@ -18,6 +18,13 @@ const FollowMouse = () => {
       window.removeEventListener("pointermove", handleMouseMove);
     };
   }, [enabled]);
+  useEffect(() => {
+    document.body.style.cursor = enabled ? "none" : "auto";
+
+    return () => {
+      document.body.style.cursor = "auto";
+    };
+  }, [enabled]);
 
   return (
     <>
