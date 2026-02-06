@@ -38,7 +38,7 @@ function App() {
     const newWinner = checkWinner(newBoard);
     if (newWinner) {
       confetti();
-      setWinner((prevWinner) => newWinner);
+      setWinner(newWinner);
     } else if (checkEndGame(newBoard)) {
       setWinner(false); // It's a tie
     }
